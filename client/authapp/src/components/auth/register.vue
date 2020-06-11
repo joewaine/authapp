@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container nav-acc-header">
     <div class="row">
       <div class="col-lg-6 offset-lg-3 col-sm-10 offset-sm-1">
         <form
@@ -66,7 +66,6 @@ export default {
     async registerUser() {
       try {
         let response = await this.$http.post("/user/register", this.register);
-        console.log(response);
         let token = response.data.token;
         if (token) {
           localStorage.setItem("jwt", token);
@@ -87,3 +86,20 @@ export default {
   }
 };
 </script>
+<style>
+
+
+.nav-acc-header{
+  padding-top: 140px;
+}
+
+
+@media only screen and (max-width: 1080px) {
+
+.nav-acc-header{
+ padding-top: 80px;
+}
+
+}
+
+</style>
