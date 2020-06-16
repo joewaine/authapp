@@ -36,6 +36,13 @@ app.get("/", (req, res) => {
 const userRoutes = require("./api/user/route/user"); //bring in our user routes
 app.use("/user", userRoutes);
 
+
+const productRoutes = require("./api/product/route/product"); //bring in our product routes
+app.use("/product", productRoutes);
+
+
+
+
 app.listen(PORT, () => {
   console.log(`App is running on ${PORT}`);
 });

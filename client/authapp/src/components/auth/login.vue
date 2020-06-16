@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container nav-acc-header">
     <div class="row">
       <div class="col-lg-6 offset-lg-3 col-sm-10 offset-sm-1">
         <form
@@ -39,6 +39,9 @@
             </button>
           </center>
         </form>
+
+
+        
       </div>
     </div>
   </div>
@@ -73,3 +76,22 @@ export default {
   }
 };
 </script>
+
+
+<style>
+
+
+.nav-acc-header{
+  padding-top: 140px;
+}
+
+
+@media only screen and (max-width: 1080px) {
+
+.nav-acc-header{
+ padding-top: 80px;
+}
+
+}
+
+</style>

@@ -25,7 +25,7 @@ const userSchema = mongoose.Schema({
         required: true
       }
     }
-  ]
+  ] 
 });
 
 userSchema.pre("save", async function(next) {
@@ -61,6 +61,19 @@ userSchema.statics.findByCredentials = async (email, password) => {
   }
   return user;
 };
+
+
+// this method searches for a user by user id - 
+userSchema.statics.findByUserId = async (id) => {
+  let _id = id; 
+  const user = await User.findOne({ _id });
+
+  if(!user) {
+    throw new Error({ error: "Invalid id" });
+  }
+  console.log(user)
+  return user
+}
 
 const User = mongoose.model("User", userSchema);
 module.exports = User;

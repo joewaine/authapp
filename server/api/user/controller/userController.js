@@ -24,14 +24,17 @@ exports.registerNewUser = async (req, res) => {
 
 exports.addProduct = async (req, res) => {
   try {
-
       await User.findByIdAndUpdate(
       { _id: req.body.id },
-      { $push: { products: 'a new item' } }
+      { $push: { products: req.body.name } }
       );
+
+      const user = await User.findByUserId(req.body.id)
+   
       let data = await user.save();
       const token = await user.generateAuthToken(); // here it is calling the method that we created in the model
     res.status(201).json({ user, token });
+    console.log(user)
   } catch (err) {
     res.status(400).json({ err: err });
   }
@@ -42,7 +45,6 @@ exports.loginUser = async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     const user = await User.findByCredentials(email, password);
-    console.log(user);
     if (!user) {
       return res
         .status(401)
@@ -54,6 +56,15 @@ exports.loginUser = async (req, res) => {
     res.status(400).json({ err: err });
   }
 };
-exports.getUserDetails = async (req, res) => {
-  await res.json(req.userData);
+
+
+exports.getUserProducts = async (req, res) => {
+ try {
+  const user = await User.findByUserId(req.params.id)
+    console.log(user)
+    res.status(201).json({ user });
+  } catch (err) {
+    res.status(400).json({ err: err });
+  }
 };
+
