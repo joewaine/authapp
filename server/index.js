@@ -30,6 +30,8 @@ app.use(morgan("dev")); // configire morgan
 
 // define first route
 app.get("/", (req, res) => {
+
+ res.send(JSON.stringify({ Hello: 'mevn solider'}));
   console.log("Hello MEVN Soldier");
 });
 
