@@ -61,7 +61,7 @@ export default {
     },
   },
   created() {
-    this.getUserDetails();
+    // this.getUserDetails();
   }
 };
 </script>

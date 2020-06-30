@@ -10,8 +10,12 @@
     "axios": "^0.19.0",
     "bootstrap": "^4.4.1",
     "core-js": "^3.4.3",
+    "jquery": "^3.5.1",
+    "jquery-ui": "^1.12.1",
     "sweetalert": "^2.1.2",
     "vue": "^2.6.10",
+    "vue-axios-cors": "^1.0.1",
+    "vue-coverflow": "^2.2.0",
     "vue-jwt-decode": "^0.1.0",
     "vue-mq": "^1.0.1",
     "vue-owl-carousel": "^2.0.3",
@@ -23,6 +27,9 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-service": "^4.1.0",
+    "node-sass": "^4.14.1",
+    "sass": "^1.26.8",
+    "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.10"
   },
   "browserslist": [

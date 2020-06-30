@@ -2,7 +2,6 @@
   <div>
 <Nav />
 
-
       <div class="container mt-5 nav-acc-header">
         <div class="row">
           <div class="col-md-12">
@@ -11,12 +10,16 @@
               <li class="list-group-item">Email : {{ user.email }}</li>
               </ul>
 <ul style="display:none;">
-  <li v-for="(item, index) in products">
+  <li v-for="item in products" v-bind:key="item">
     {{ item }}
   </li>
   </ul>
 
 <SlideShow />
+
+
+
+
 
 
 <!-- <Products /> -->
@@ -45,7 +48,7 @@ export default {
     return {
       user: {},
       products: ''
-    };
+      };
   },
   methods: {
     getUserDetails() {
@@ -59,22 +62,15 @@ export default {
       // console.log(response.data.user.products)
       this.products = response.data.user.products
     },
-    logUserOut() {
-      localStorage.removeItem("jwt");
-      this.$router.push("/");
+    // logUserOut() {
+    //   localStorage.removeItem("jwt");
+    //   this.$router.push("/");
+    // },
     },
-    async showProducts() {
+  mounted() {
+      // this.getUserDetails();
+      // this.getUserProducts();
 
-      //  let response = await this.$http.get('https://simplejsoncms.com/api/m9uijyzkyb').then(result => { 
-      //     console.log(result.data)
-      //   })
-      // console.log(response) 
-    }    
-  },
-  created() {
-    this.getUserDetails();
-    this.getUserProducts();
-this.showProducts();
 
 
 

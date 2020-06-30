@@ -29,31 +29,195 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
-    <style>
-      #snipcart-header{
-        background: pink
-      }
-      </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <script data-n-head="true" src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-autopop="false" data-api-key="ZWMzNjdjM2MtOTQyNi00MjU2LTgwZjMtMzlhNmFiZDMwNDBlNjM3MjYyOTQ3OTQ3OTcxNTA1"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">   
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.15/default/snipcart.css" />
 
     <script>    !function(t,o,c,k){if(!t.tock){var e=t.tock=function(){e.callMethod?    e.callMethod.apply(e,arguments):e.queue.push(arguments)};t._tock||(t._tock=e),    e.push=e,e.loaded=!0,e.version='1.0',e.queue=[];var f=o.createElement(c);f.async=!0,    f.src=k;var g=o.getElementsByTagName(c)[0];g.parentNode.insertBefore(f,g)}}(    window,document,'script','https://www.exploretock.com/tock.js');    tock('init', 'mamnoonrestaurant');    </script>
 
-  </head>
+
+<!-- cover flow -->
+		<!-- jQuery/jQueryUI (hosted) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.js"></script>
+
+	
+
+		<!-- interpolate, depends on jQ 1.8.0+ -->
+		<!-- <script src="jquery.interpolate.min.js"></script> -->
+
+		<!-- Coverflow -->
+		<script src="jquery.coverflow.js"></script>
+
+		<style>
+			body {
+				font-family: "Segoe UI", Verdana, Helvetica, Arial, sans-serif;
+				font-size: 11px;
+			}
+
+			.coverflow {
+				height: 100px;
+				/* border-bottom: solid 2px black; */
+			}
+
+      .coverflow:focus{
+        outline: none;
+      }
+
+			.coverflow .cover {
+				width: 400px;
+				/* height: 400px; */
+				cursor: pointer;
+				font-size: 500%;
+				/* border: solid 2px black; */
+				text-align: center;
+
+				background: #e2e2e2; /* Old browsers */
+				/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+				background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UyZTJlMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2RiZGJkYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iI2QxZDFkMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZWZlZmUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+				background: -moz-linear-gradient(top,  #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e2e2e2), color-stop(50%,#dbdbdb), color-stop(51%,#d1d1d1), color-stop(100%,#fefefe)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* IE10+ */
+				background: linear-gradient(to bottom,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-8 */
+			}
+
+
+			.coverflow .cover.current:after {
+				/* content:			' ';
+				background-color:	white;
+				display:			block;
+				position:			absolute;
+				width:				132px;
+				height:				16px;
+				left:				-16px;
+				bottom:				-16px; */
+			}
+
+
+      .coverflow img{
+        width: 100%;
+      }
+
+			/* CD covers */
+			.photos .cover {
+				cursor: pointer;
+				/*-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255, 255, 255, .5)));*/
+			}
+
+			#photos-info {
+				position:		relative;
+				text-align:		center;
+				z-index:		1000;
+				text-shadow:	0 0 8px white;
+			}
+
+			#photos-name {
+				font-size: 200%;
+				font-weight: bold;
+			}
+
+			.clearfix {
+				clear: both;
+			}
+		</style>
+		
+		<script>
+			$(function() {
+
+				// Alphabet
+
+				$('.coverflow').coverflow();
+
+				$('#first').click(function() {
+					$('.coverflow').coverflow('index', 0);
+				});
+
+				$('#last').click(function() {
+					$('.coverflow').coverflow('index', -1);
+				});
+
+
+				$('#prevFlow').click(function() {
+          let prev = $('#title').data('current') - 1
+          $('.coverflow').coverflow('index', prev);
+ 
+          $('#title').attr('data-current', prev)
+
+				});
+
+				$('#nextFlow').click(function() {
+       
+            let next = $('#title').data('current') + 1
+          $('.coverflow').coverflow('index', next);
+       $('#title').attr('data-current', next)
+				});
+
+
+
+				$('#goto6').click(function() {
+					$('.coverflow').coverflow('index', 6-1);	// zero-based index!
+				});
+				
+				$('#keyboard').click(function() {
+					$('.coverflow').coverflow('option', 'enableKeyboard', $(this).is(':checked'));
+				});
+				
+				$('#wheel').click(function() {
+					$('.coverflow').coverflow('option', 'enableWheel', $(this).is(':checked'));
+				});
+				
+				$('#click').click(function() {
+					$('.coverflow').coverflow('option', 'enableClick', $(this).is(':checked'));
+				});
+
+
+			});
+		</script>
+
+
+<!--cover flow-->
+
+</head>
+
   <body>
     <noscript>
       <strong>We're sorry but authapp doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+
+
+
+
+
+<!--cover flow-->
+
+
+<!-- <div style="position:absolute;background:rgba(255,255,255,.75);z-index:1000;padding:10px"> -->
+  <!-- <button id="first">first</button>
+  <button id="goto6">Go to #6</button>
+  <button id="last">last</button> -->
+  <!-- <br/><label for="keyboard"><input type="checkbox" id="keyboard" checked/>Keyboard</label>
+  <br/><label for="click"><input type="checkbox" id="click" checked/>Click/tap</label>
+  <br/><label for="wheel"><input type="checkbox" id="wheel" checked/>Scroll wheel</label>
+</div> -->
+<!-- <br><br><br><br><br><br><br><br><br><br><br> -->
+
+
+
+<!--cover flow-->
+    
     <div id="app"></div>
-    <!-- built files will be auto injected -->
+
+
+    <div hidden id="snipcart" data-api-key="ZWMzNjdjM2MtOTQyNi00MjU2LTgwZjMtMzlhNmFiZDMwNDBlNjM3MjYyOTQ3OTQ3OTcxNTA1"></div>
+    <script src="https://cdn.snipcart.com/themes/v3.0.15/default/snipcart.js"></script>
+
+
+ 
+    
 
 
 
-
-
-    <!-- <div id="snipcart" data-api-key="ZWMzNjdjM2MtOTQyNi00MjU2LTgwZjMtMzlhNmFiZDMwNDBlNjM3MjYyOTQ3OTQ3OTcxNTA1" hidden></div>
-    <script src="https://cdn.snipcart.com/themes/v3.0.14/default/snipcart.js"></script> -->
   </body>
 </html>

@@ -27,7 +27,7 @@
           />
 
           <p>
-            Dont have an account??<router-link to="/register"
+            Dont have an account??&nbsp;<router-link to="/register"
               >click here</router-link
             >
           </p>
@@ -54,31 +54,42 @@ export default {
     return {
       login: {
         email: "",
-        password: ""
+        password: "",
+        name: ""
       }
     };
   },
   methods: {
     async loginUser() {
+      //  loginUser() {
+      //  this.$router.push("/home");
       try {
-        let response = await this.$http.post("/user/login", this.login);
+ 
+       let response = await this.$http.post("/user/login", this.login);
+       console.log(response)
         let token = response.data.token;
         localStorage.setItem("jwt", token);
         if (token) {
           swal("Success", "Login Successful", "Error");
-          this.$router.push("/home");
+          this.$router.push("/");
+// this.$store.commit('logIn', { timeslot })
+this.$store.commit('logIn')
+console.log(this.$store.state.loggedIn)
+
         }
       } catch (err) {
         swal("Error", "Something Went Wrong", "error");
         console.log(err.response);
       }
     }
-  }
-};
+  
+}
+}
+
 </script>
 
 
-<style>
+<style lang="scss">
 
 
 .nav-acc-header{
